@@ -38,7 +38,7 @@ type User struct {
 }
 
 func (c *Client) GetMergeRequestApprovals(ctx context.Context, mrURL string) (*MergeRequestApprovals, error) {
-	match := c.PipelineRegexp.FindStringSubmatch(mrURL)
+	match := c.MRRegexp.FindStringSubmatch(mrURL)
 	mrData := make(map[string]string)
 
 	for i, value := range match {
@@ -52,7 +52,7 @@ func (c *Client) GetMergeRequestApprovals(ctx context.Context, mrURL string) (*M
 		return nil, err
 	}
 
-	endpoint := fmt.Sprintf("projects/%s/merge_request/%d/approvals", projectID, mrID)
+	endpoint := fmt.Sprintf("projects/%s/merge_requests/%d/approvals", projectID, mrID)
 	resp, err := c.callAPI(ctx, http.MethodGet, endpoint, nil)
 
 	var returnData MergeRequestApprovals
