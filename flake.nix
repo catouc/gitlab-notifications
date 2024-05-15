@@ -15,7 +15,8 @@
           version = "0.1.1";
           modSha256 = pkgs.lib.fakeSha256;
           vendorHash = null;
-          src = ./.;
+	  src = ./.;
+          subPackages = [ "cmd/gitlab-notifications" "cmd/gitlab-notifications-daemon" ];
         };
       in
       rec {
