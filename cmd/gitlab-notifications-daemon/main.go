@@ -25,6 +25,8 @@ var (
 )
 
 func main() {
+	flag.Parse()
+
 	baseURL := decideStringFlagValue(gitlabBaseURL, "GITLAB_BASE_URL")
 	if baseURL == "" {
 		flag.PrintDefaults()
