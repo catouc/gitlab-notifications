@@ -32,9 +32,9 @@ func New(baseURL, token string, timeout time.Duration) *Client {
 		BaseURL:    baseURL,
 		Token:      token,
 		HTTPClient: httpClient,
-		MRRegexp: regexp.MustCompile("^" + baseURL + "/(?P<projectID>.+)/-/merge_requests/(?P<mrID>[1-9][0-9]+)$"),
-		JobRegexp: regexp.MustCompile("^" + baseURL + "/(?P<projectID>.+)/-/jobs/(?P<jobID>[1-9][0-9]+)$"),
-		PipelineRegexp: regexp.MustCompile("^" + baseURL + "/(?P<projectID>.+)/-/pipelines/(?P<pipelineID>[1-9][0-9]+)$"),
+		MRRegexp: regexp.MustCompile("^" + baseURL + "/(?P<projectID>.+)/-/merge_requests/(?P<mrID>[1-9][0-9]*)$"),
+		JobRegexp: regexp.MustCompile("^" + baseURL + "/(?P<projectID>.+)/-/jobs/(?P<jobID>[1-9][0-9]*)$"),
+		PipelineRegexp: regexp.MustCompile("^" + baseURL + "/(?P<projectID>.+)/-/pipelines/(?P<pipelineID>[1-9][0-9]*)$"),
 	}
 
 	return &c
