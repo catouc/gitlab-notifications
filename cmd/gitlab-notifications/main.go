@@ -9,7 +9,7 @@ import (
 const socketPath = "/tmp/gitlab-notifications.sock"
 
 func main() {
-	url := os.Args[0]
+	url := os.Args[1]
 
 	sock, err := net.Dial("unix", socketPath)	
 	if err != nil {

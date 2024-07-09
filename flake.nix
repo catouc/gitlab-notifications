@@ -12,7 +12,7 @@
         pkgs = nixpkgs.legacyPackages.${system};
         build = pkgs.buildGoModule {
           pname = "gitlab-notifications";
-          version = "0.2.1";
+          version = "0.2.2";
           modSha256 = pkgs.lib.fakeSha256;
           vendorHash = null;
 	  src = ./.;
